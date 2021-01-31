@@ -7,3 +7,11 @@ add:
     - [-1,1,0]
   ids: ['int','zero','bignum','minus','result0']
 
+div:
+  datas:
+    - [1,1,1]
+    - [100,400,0.25]
+    - [1,0,1]
+    - [0.1,0.1,1]
+    - [-1,1,-1]
+  ids: ['int','zero','bignum','minus','result0']

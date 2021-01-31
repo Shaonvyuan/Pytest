@@ -37,13 +37,24 @@ class TestCalc:
         result = self.calc.add(a, b)
         assert expected == result
 
+    @pytest.mark.parametrize("a, b, expected", get_datas()['div']['datas'], ids=get_datas()['div']['ids'])
+    def test_div(self, a, b, expected):
+        if b == 0:
+            try:
+                self.calc.div(a, b)
+            except ZeroDivisionError as e:
+                print("Divisor should not be zero")
+                assert b != 0
+        else:
+            result = self.calc.div(a, b)
+            assert expected == result
+
     # def test_add1(self):
     #     datas = [[1, 1, 2], [100, 400, 500], [1, 0, 1]]
     #     for data in datas:
     #         print(data)
     #         assert data[2] == self.calc.add(data[0], data[1])
 
-    # # TODO: 相除功能
     # def test_div(self):
     #     datas = [[1, 1, 1], [100, 400, 500], [1, 0, 1]]
     #     for data in datas:
