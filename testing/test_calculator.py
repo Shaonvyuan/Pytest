@@ -44,7 +44,6 @@ class TestCalc:
                 self.calc.div(a, b)
             except ZeroDivisionError as e:
                 print("Divisor should not be zero")
-                assert b != 0
         else:
             result = self.calc.div(a, b)
             assert expected == result
